@@ -2,3 +2,4 @@
 app/__pycache__/
 db_repository/
 dressage.db
+/app/forms.py

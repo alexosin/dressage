@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <form action="" method="post">
+    {% for question in questions %}
+        <h3>{{ question.text }}</h3>
+        {% for answer in question.answers %}
+            {{ answer.id, answer.text }}
+            <label>
+            <input type="{{ question.type.value }}"
+                   name="{{ question.id }}"
+                   value="{{ answer.id }}"
+                    {% if question.type.value == 'radio'%} required {% endif %}> {{ answer.text }}
+            </label>
+            <br>
+        {% endfor %}
+        <br>
+    {% endfor %}
+    <button type="submit">Check</button>
+    </form>
+{% endblock %}

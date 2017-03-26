@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+
+{% block content %}
+Result page
+    {{ session['mark'] }} {{ session['rights'] }}\{{ session['max'] }}
+    <a href="{{ url_for('main') }}">Main page</a>
+{% endblock %}
