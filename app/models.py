@@ -35,7 +35,7 @@ class Question(db.Model):
     chapter_id = Column(Integer, ForeignKey('chapters.id'), nullable=False)
     type = Column(ChoiceType(TYPES), nullable=False)
     answer = relationship('Answer', backref='question', cascade='save-update, delete')
-    mark_id = Column(Integer, ForeignKey('marks.id'), nullable=False)
+    mark = Column(Integer, default=5)
 
     @classmethod
     def max_id(cls):
@@ -82,17 +82,4 @@ class Answer(db.Model):
     def __str__(self):
         return '<Answer(id {}, question_id {}, status {})>'.format(
             self.id, self.question_id, self.status
-        )
-
-
-class Mark(db.Model):
-    __tablename__ = 'marks'
-
-    id = Column(Integer, primary_key=True, unique=True, autoincrement=True)
-    mark = Column(Integer)
-    question = relationship('Question', backref='mark')
-
-    def __str__(self):
-        return '<Mark(id {}, mark {})>'.format(
-            self.id, self.mark
         )
