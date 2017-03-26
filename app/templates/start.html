@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
 
 {% block content %}
-Dressage app
-    <a href="{{ url_for('chapter') }}">Start</a>
+    <h1 class="text-center">Dressage App</h1>
+    <form method="get" action="{{ url_for('chapter') }}">
+        <button type="submit" class="btn btn-primary center-block">
+            <h4>Start learning</h4>
+        </button>
+    </form>
 {% endblock %}

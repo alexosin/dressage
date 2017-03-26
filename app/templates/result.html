@@ -1,7 +1,10 @@
 {% extends 'base.html' %}
 
 {% block content %}
-Result page
-    {{ session['mark'] }} {{ session['rights'] }}\{{ session['max'] }}
-    <a href="{{ url_for('main') }}">Main page</a>
+    <h1 class="text-center text-capitalize">Result page</h1>
+    <h3 class="text-success">{{ session['mark'] }}</h3>
+    <h3 class="text-primary">{{ session['rights'] }}\{{ session['max'] }}</h3>
+    <form action="{{ url_for('main') }}" method="get">
+        <button type="submit" class="btn btn-default center-block">Return to main page</button>
+    </form>
 {% endblock %}
