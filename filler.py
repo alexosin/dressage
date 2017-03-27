@@ -1,7 +1,8 @@
 from app import db
-from app.models import Chapter, Question, Answer
+from app.models import Chapter, Question, Answer, User
 
 db.session.add_all([
+    User(username='osin', password='test'),
     Chapter(title='first chapter', text='dog'),
     Chapter(title='second chapter', text='cat'),
     Chapter(title='third chapter', text='parrot'),

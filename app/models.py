@@ -5,6 +5,18 @@ from sqlalchemy.orm import relationship
 from sqlalchemy.sql.expression import func
 
 
+class User(db.Model):
+    __tablename__ = 'users'
+
+    id = Column(Integer, primary_key=True, unique=True, autoincrement=True)
+    username = Column(String)
+    password = Column(String)
+
+    def __str__(self):
+        return '<User(username {})>'.format(
+            self.username
+        )
+
 
 class Chapter(db.Model):
     __tablename__ = 'chapters'
@@ -18,7 +30,7 @@ class Chapter(db.Model):
     def max_id(cls):
         return db.session.query(func.max(Chapter.id)).first()
 
-    def __repr__(self):
+    def __str__(self):
         return '<Chapter(id {}, text {})>'.format(self.id, self.text[:10])
 
 
