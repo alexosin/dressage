@@ -29,6 +29,7 @@ def login():
             session['user'] = username
         else:
             flash(u'Invalid login or password', 'danger')
+            return redirect(url_for('login'))
         return redirect(url_for('main'))
     elif request.method == 'GET':
         if session.get('logged_in'):
