@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 class="text-center">Dressage App</h1>
+    {% if session['logged_in'] %}
+        <div class="row">
+            <div class="col-md-4 col-md-offset-1">
+                <h3 class=" text-capitalize text-right">{{ session['user'] }}</h3>
+            </div>
+            <div class="col-md-4 col-md-offset-1">
+                <h3 class="text-center"><a href="{{ url_for('logout') }}">Log out</a></h3>
+            </div>
+        </div>
+    {% else %}
+        <h3 class="text-center"><a href="{{ url_for('login') }}">Login</a></h3>
+    {% endif %}
+    <br>
+    <form method="get" action="{{ url_for('chapter') }}">
+        <button type="submit" class="btn btn-primary center-block">
+            <h4>Start learning</h4>
+        </button>
+    </form>
+{% endblock %}

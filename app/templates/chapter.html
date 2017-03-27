@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 class="text-center text-capitalize">{{ chapter.title }}</h1>
+    <p>
+        {{ chapter.text }}
+    </p>
+    <form action="" method="post">
+        <button type="submit" class="btn btn-success center-block">Quiz for chapter</button>
+    </form>
+{% endblock %}

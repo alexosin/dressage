@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 class="text-center text-capitalize">You result</h1>
+    <h3 class="text-left">Scored <span class="text-success">{{ session['mark'] }}</span> points</h3>
+    <h3 class="text-left">Answered
+        <span class="text-info">{{ session['rights'] }}</span> /
+        <span class="text-info">{{ session['max'] }}</span>
+    </h3>
+    <br>
+    <form action="{{ url_for('main') }}" method="get">
+        <button type="submit" class="btn btn-default center-block">
+            <h4>Return to main page</h4>
+        </button>
+    </form>
+{% endblock %}
