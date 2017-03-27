@@ -7,4 +7,10 @@ Simple quiz learner.
 * others see in [requirements](requirements.txt)
 
 ## Run app
+* install python, virtualenv
+* virtualenv dressage_env
+* pip install requirements.txt
+* python db_create.py
+* python db_migrate.py
+* python filler.py
 * python run.py 
