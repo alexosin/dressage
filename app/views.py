@@ -49,6 +49,7 @@ def logout():
 def chapter():
     if request.method == 'GET':
         if not session.get('logged_in'):
+            flash(u'First you must be logged in.', 'info')
             return redirect(url_for('login'))
         if 'id' in session:
             session['id'] += 1
